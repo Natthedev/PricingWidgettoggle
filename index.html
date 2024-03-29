@@ -9,7 +9,385 @@
     <link rel="stylesheet" href="/PricingWidgettogglePJ/styless.css">
 
 </head>
-<body>
+<Style>
+
+    /* Boxes to establish the window and inner box that contains the pricing blocks*/
+
+    .backgroundcont {
+        display: flex;
+        width: 1440px;
+        height: 1024px;
+        padding: 110px 48px;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(0, 0%, 96%);
+        background-size: 45%, 20%;
+        background-repeat: no-repeat;
+        background-position: 15% 100%, 100% 3%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='375' height='658'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23D0D5F6' stroke-width='2'%3E%3Cpath d='M172.71-101C70.623-79.38 17.478-39.688 13.273 18.074c-6.307 86.643 231.598 17.186 136.358 198-95.241 180.813-181.318 185.29-136.358 298C58.233 626.784 178.96 685.954 319.21 641.2c93.501-29.836 144.652-140.545 153.453-332.126'/%3E%3Cpath d='M214.7-101C134.617-82.012 92.926-47.154 89.628 3.575c-4.948 76.093 181.679 15.094 106.966 173.89C121.882 336.262 54.36 340.192 89.628 439.18c35.269 98.986 129.974 150.95 239.995 111.646C402.97 524.622 443.096 427.395 450 259.141'/%3E%3Cpath d='M250.935-103c-60.604 16.56-92.153 46.963-94.65 91.208-3.743 66.367 137.488 13.165 80.949 151.664-56.54 138.5-107.638 141.927-80.948 228.261 26.69 86.335 98.359 131.656 181.618 97.376C393.41 442.655 423.775 357.855 429 211.108'/%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='353' height='304'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23D0D5F6' stroke-width='2'%3E%3Cpath d='M180.29 759c102.087-21.62 155.232-61.312 159.437-119.074 6.307-86.643-231.598-17.186-136.358-198 95.241-180.813 181.318-185.29 136.358-298C294.767 31.216 174.04-27.954 33.79 16.8c-93.501 29.836-144.652 140.545-153.453 332.126'/%3E%3Cpath d='M138.3 759c80.083-18.988 121.774-53.846 125.072-104.575 4.948-76.093-181.679-15.094-106.966-173.89C231.118 321.738 298.64 317.808 263.372 218.82c-35.269-98.986-129.974-150.95-239.995-111.646C-49.97 133.378-90.096 230.605-97 398.859'/%3E%3Cpath d='M102.065 761c60.604-16.56 92.153-46.963 94.65-91.208 3.743-66.367-137.488-13.165-80.949-151.664 56.54-138.5 107.638-141.927 80.948-228.261-26.69-86.335-98.359-131.656-181.618-97.376C-40.41 215.345-70.775 300.145-76 446.892'/%3E%3C/g%3E%3C/svg%3E");
+
+    }
+
+    .innerbox {
+        width: 1344px;
+        height: 1000px;
+        background-color: hsl(233, 28%, 82%);
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        margin: 10px;
+        padding: 45px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='375' height='658'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23D0D5F6' stroke-width='2'%3E%3Cpath d='M172.71-101C70.623-79.38 17.478-39.688 13.273 18.074c-6.307 86.643 231.598 17.186 136.358 198-95.241 180.813-181.318 185.29-136.358 298C58.233 626.784 178.96 685.954 319.21 641.2c93.501-29.836 144.652-140.545 153.453-332.126'/%3E%3Cpath d='M214.7-101C134.617-82.012 92.926-47.154 89.628 3.575c-4.948 76.093 181.679 15.094 106.966 173.89C121.882 336.262 54.36 340.192 89.628 439.18c35.269 98.986 129.974 150.95 239.995 111.646C402.97 524.622 443.096 427.395 450 259.141'/%3E%3Cpath d='M250.935-103c-60.604 16.56-92.153 46.963-94.65 91.208-3.743 66.367 137.488 13.165 80.949 151.664-56.54 138.5-107.638 141.927-80.948 228.261 26.69 86.335 98.359 131.656 181.618 97.376C393.41 442.655 423.775 357.855 429 211.108'/%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='353' height='304'%3E%3Cg fill='none' fill-rule='evenodd' stroke='%23D0D5F6' stroke-width='2'%3E%3Cpath d='M180.29 759c102.087-21.62 155.232-61.312 159.437-119.074 6.307-86.643-231.598-17.186-136.358-198 95.241-180.813 181.318-185.29 136.358-298C294.767 31.216 174.04-27.954 33.79 16.8c-93.501 29.836-144.652 140.545-153.453 332.126'/%3E%3Cpath d='M138.3 759c80.083-18.988 121.774-53.846 125.072-104.575 4.948-76.093-181.679-15.094-106.966-173.89C231.118 321.738 298.64 317.808 263.372 218.82c-35.269-98.986-129.974-150.95-239.995-111.646C-49.97 133.378-90.096 230.605-97 398.859'/%3E%3Cpath d='M102.065 761c60.604-16.56 92.153-46.963 94.65-91.208 3.743-66.367-137.488-13.165-80.949-151.664 56.54-138.5 107.638-141.927 80.948-228.261-26.69-86.335-98.359-131.656-181.618-97.376C-40.41 215.345-70.775 300.145-76 446.892'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 40%, 30%;
+        background-position: 100% 9%, 1% 100%;
+        background-repeat: no-repeat;
+    }
+
+    /*contains boxes to make them look better*/
+    .priceboxcont {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        width: auto;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+
+
+
+    /* price containers*/
+    .basicboxes {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 384px;
+        height: 526px;
+        border-radius: 14px;
+        background-color: hsl(0, 0%, 100%);
+        align-items: center;
+        padding: 10px;
+    }
+
+    .profboxes {
+        display: flex;
+        flex-direction: column;
+        width: 419px;
+        height: 567px;
+        border-radius: 14px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        align-items: center;
+        padding: 15px;
+        background-color: hsl(233, 13%, 49%);
+        background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+        
+
+
+    }
+
+    .masterboxes {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        width: 384px;
+        height: 526px;
+        border-radius: 14px;
+        padding: 10px;
+        background-color: hsl(0, 0%, 100%);
+        align-items: center;
+    }
+
+    /*Text variables*/
     
+    .pricehead h1 {
+        display: flex;
+        flex-direction: row;
+        font-size: 55px;
+        width: auto;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 35px;
+        font-family: "montserrat black";
+        color: hsl(232, 13%, 33%);
+    }
+
+    .priceboxhead h2 {
+        font-size: 15px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-family: "montserrat";
+        color: hsl(232, 13%, 33%);
+
+    }
+    .priceboxhead h3 {
+        font-size: 20px;
+        font-family: "montserrat";
+        color: hsl(232, 13%, 33%);
+    }
+
+    /*Toggle Switch*/
+    .toggleswitchandlabels {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        align-items: baseline;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        line-height: 34px;
+        margin-bottom: 10px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #7d60ff;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: hsl(249, 48%, 30%);
+    }
+
+    input:focus+.slider {
+        box-shadow: 4 4 4px #555555;
+
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    /* Added some additional styling for the pricing boxes */
+    .pricehead {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        width: 70%;
+        font-size: 20px;
+        margin-top: 20px;
+        height: 55px;
+        background: linear-gradient(hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+        border: none;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        font-family: "montserrat SemiBold";
+
+    }
+    @media only screen and (max-width:875px) {
+        .priceboxcont {
+            flex-direction: column;
+        }
+        .backgroundcont {
+            width: 100%;
+            background-size: auto;
+            height: auto;
+        }
+        .innerbox {
+            display: flex;
+            flex-direction: column;
+            width: 325px;
+            height: 100%;
+            scroll-behavior: smooth;
+            background-size: auto;
+        }
+        .basicboxes {
+            height: 450px;
+            width: 307px; ;
+            
+        }
+        .profboxes {
+            height: 453px;
+            width: 335px;
+        }
+        .masterboxes {
+            height: 450px;
+            width:307px ;
+        }
+        button {
+            margin-top: 1%;
+            margin-bottom: 1%;
+            border-radius: 10px;
+        }
+
+
+    }
+
+</Style>
+<body>
+    <div class="backgroundcont">
+        <div class="innerbox">
+            <div class="pricehead">
+                <h1>Our Pricing</h1>
+                <center>
+                    <div class="toggleswitchandlabels">
+                        <col style="display: flex; flex-direction: row; align-items: center;">
+                        <div class="priceboxhead">
+                            <h2 style="margin: 15px;">Monthly</h2>
+                        </div>
+                        </col>
+                        <col>
+                        <label class="switch">
+                            <input type="checkbox" id="togglePricing">
+                            <span class="slider round"></span>
+                        </label></col>
+                        <col>
+                        <div class="priceboxhead">
+                            <h2 style="margin: 15px;">Annually</h2>
+                        </div>
+                    </div>
+                </center>
+
+            </div>
+
+            <!-- Pricing boxes -->
+            <div class="priceboxcont">
+                <div class="basicboxes">
+                    <div class="priceboxhead">
+                        <h3>Basic Plan</h3>
+                    </div>
+                    <div class="pricehead">
+                        <h1 id="basicPrice" style="font-size: 55px;">$</h1>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2>500GB Storage</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2>2 Users Allowed</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2>Send up to 3GB</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <button style="color: rgb(250, 250, 250);">Learn More</button>
+                </div>
+
+                <div class="profboxes">
+                    <div class="priceboxhead">
+                        <h3 style="color: rgb(255, 255, 255);">Professional Plan</h3>
+                    </div>
+                    <div class="pricehead">
+                        <h1 id="professionalPrice" style="color: rgb(255, 255, 255); font-size: 55px;">$</h1>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2 style="color: rgb(250, 250, 250);">1TB Storage</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2 style="color: rgb(250, 250, 250);">5 Users Allowed</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2 style="color: rgb(250, 250, 250);">Send up to 10GB</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <button style="background: rgb(239, 244, 255); color: hsl(232, 13%, 33%);">Learn More</button>
+                </div>
+
+                <div class="masterboxes">
+                    <div class="priceboxhead">
+                        <h3>Master Plan</h3>
+                    </div>
+                    <div class="pricehead">
+                        <h1 id="masterPrice" style="font-size: 55px;">$</h1>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2> 2TB Storage</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2>10 Users Allowed</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <div class="priceboxhead">
+                        <h2>Send up to 20GB</h2>
+                    </div>
+                    <hr style="width: 75%;text-align: center;">
+                    <button style="color: rgb(255, 255, 255);">Learn More</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to update prices based on toggle
+        document.getElementById("togglePricing").addEventListener("change", function () {
+            var basicPrice = document.getElementById("basicPrice");
+            var professionalPrice = document.getElementById("professionalPrice");
+            var masterPrice = document.getElementById("masterPrice");
+
+            if (this.checked) {
+                // Set yearly prices
+                basicPrice.textContent = "$199.99";
+                professionalPrice.textContent = "$249.99";
+                masterPrice.textContent = "$399.99";
+            } else {
+                // Set monthly prices
+                basicPrice.textContent = "$19.99";
+                professionalPrice.textContent = "$24.99";
+                masterPrice.textContent = "$39.99";
+            }
+        });
+
+        // Initialize display with monthly prices
+        var basicPrice = document.getElementById("basicPrice");
+        var professionalPrice = document.getElementById("professionalPrice");
+        var masterPrice = document.getElementById("masterPrice");
+        basicPrice.textContent = "$19.99";
+        professionalPrice.textContent = "$24.99";
+        masterPrice.textContent = "$39.99";
+    </script>
+   
 </body>
 </html>
